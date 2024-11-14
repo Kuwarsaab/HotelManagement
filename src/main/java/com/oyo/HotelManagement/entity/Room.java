@@ -1,11 +1,15 @@
 package com.oyo.HotelManagement.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oyo.HotelManagement.enums.RoomType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,6 +34,10 @@ public class Room {
 
     @Column(name="active")
     Boolean active;
+
+    @ManyToMany(mappedBy = "roomList")
+    @JsonIgnore
+    List<Hotel> hotelList = new ArrayList<>();
 
 
 }

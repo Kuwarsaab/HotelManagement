@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,4 +31,12 @@ public class Hotel {
 
     @Column(name="status")
     Boolean status;
+
+    @JoinTable(
+            name = "hotel_room_mappings",
+            joinColumns = @JoinColumn(name = "hotel_id"),
+            inverseJoinColumns = @JoinColumn(name = "room_id")
+    )
+    @ManyToMany
+    List<Room> roomList = new ArrayList<>();
 }

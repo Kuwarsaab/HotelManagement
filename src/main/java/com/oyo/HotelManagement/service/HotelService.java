@@ -40,6 +40,7 @@ public class HotelService {
         hotelResponseDto.setHotelName(hotel.getName());
         hotelResponseDto.setAddress(hotel.getAddress());
         hotelResponseDto.setContactNumber(hotel.getContactNumber());
+        hotelResponseDto.setRooms(hotel.getRoomList());
         return hotelResponseDto;
     }
 }

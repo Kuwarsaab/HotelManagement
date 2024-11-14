@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -33,5 +34,5 @@ public class Customer {
     AdharDetails adharDetails;
 
     @OneToMany(mappedBy = "customer")
-    List<Bookings> bookingsList;
+    List<Bookings> bookingsList = new ArrayList<>();
 }
