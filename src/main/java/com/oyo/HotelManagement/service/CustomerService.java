@@ -46,4 +46,9 @@ public class CustomerService {
         return customerResponseDto;
 
     }
+
+    public CustomerResponseDto getCustomerByEmail(String email) {
+        Customer customer = customerRepository.findByEmail(email);
+        return convertCustomerToCustomerResponseDto(customer);
+    }
 }

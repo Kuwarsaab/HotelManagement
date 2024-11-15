@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -30,6 +32,15 @@ public class Bookings {
 
     @Column(name="booking_amount")
     Integer bookingAmount;
+
+    @Column(name = "is_prepaid")
+    Boolean isPrepaid;
+
+    @Column(name = "checkin")
+    LocalDate checkin;
+
+    @Column(name = "checkout")
+    LocalDate checkout;
 
     @ManyToOne
     @JoinColumn

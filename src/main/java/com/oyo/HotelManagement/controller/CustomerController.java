@@ -23,4 +23,9 @@ public class CustomerController {
         return customerService.getCustomerDetails(customerId);
     }
 
+    @GetMapping("/email")
+    public CustomerResponseDto getCustomerByEmail(@RequestParam("email") String email){
+        return customerService.getCustomerByEmail(email);
+    }
+
 }
